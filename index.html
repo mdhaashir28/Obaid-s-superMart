@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obaid's SuperMarket</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">🛒 Obaid's SuperMarket</div>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search products..." />
+        <button onclick="searchProducts()">Search</button>
+      </div>
+      <div class="cart-icon" onclick="toggleCart()">
+        🛍 Cart <span id="cartCount">0</span>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <button onclick="showCategory('all')" class="active">All</button>
+    <button onclick="showCategory('detergents')">Detergents</button>
+    <button onclick="showCategory('grains')">Grains</button>
+    <button onclick="showCategory('pulses')">Pulses</button>
+    <button onclick="showCategory('nuts')">Nuts</button>
+    <button onclick="showCategory('spices')">Spices</button>
+    <button onclick="showCategory('vegetables')">Vegetables</button>
+  </nav>
+
+  <main>
+    <div class="controls">
+      <select id="sortSelect" onchange="sortProducts(this.value)">
+        <option value="default">Sort By</option>
+        <option value="lowToHigh">Price: Low → High</option>
+        <option value="highToLow">Price: High → Low</option>
+      </select>
+    </div>
+
+    <section id="productsSection">
+      <h2 id="sectionTitle">All Products</h2>
+      <div id="productsGrid" class="products-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Obaid's SuperMarket | All Rights Reserved</p>
+  </footer>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
